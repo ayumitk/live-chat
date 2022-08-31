@@ -4,7 +4,7 @@ import Chatroom from "../views/Chatroom.vue";
 import { auth } from "../firebase/config";
 
 // auth guard
-const requireAuth = (to, from, next) => {
+const requireAuth = async (to: any, from: any, next: any) => {
   let user = auth.currentUser;
   if (!user) {
     next({ name: "Welcome" });
@@ -13,7 +13,7 @@ const requireAuth = (to, from, next) => {
   }
 };
 
-const requireNoAuth = (to, from, next) => {
+const requireNoAuth = async (to: any, from: any, next: any) => {
   let user = auth.currentUser;
   if (user) {
     next({ name: "Chatroom" });

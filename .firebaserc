@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "oshibon-maker-45160"
+  },
+  "targets": {
+    "oshibon-maker-45160": {
+      "hosting": {
+        "chat": [
+          "live-chat-203ff"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

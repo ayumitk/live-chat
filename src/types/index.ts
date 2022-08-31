@@ -1,7 +1,8 @@
 interface Doc {
   message: string;
-  name: string;
-  createdAt: object;
+  name: string | null;
+  createdAt: any;
+  id?: string;
 }
 
 interface User {

@@ -22,12 +22,12 @@ import { Doc } from "../types";
 const { user } = getUser();
 const { addDocFnc, error } = useCollection("message");
 
-const message = ref("");
+const message = ref<string>("");
 
 const handleSubmit = async () => {
   const chat: Doc = {
     message: message.value,
-    name: user.value.displayName,
+    name: user.value !== null ? user.value.displayName : "Anonymous",
     createdAt: serverTimestamp(),
   };
 

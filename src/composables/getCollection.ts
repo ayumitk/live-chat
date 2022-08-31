@@ -3,14 +3,14 @@ import { db } from "../firebase/config";
 import { ref, watchEffect } from "vue";
 
 const getCollection = (collectionName: string) => {
-  const documents = ref(null);
+  const documents = ref<any[] | null>(null);
   const error = ref<string | null>(null);
 
   const q = query(collection(db, collectionName), orderBy("createdAt"));
   const unsubscribe = onSnapshot(
     q,
     (querySnapshot) => {
-      let result = [];
+      let result: any[] = [];
       querySnapshot.forEach((doc) => {
         result.push(doc.data());
       });

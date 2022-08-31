@@ -39,7 +39,7 @@ const formattedDocuments = computed(() => {
 });
 
 // auto-scroll to bottom of messages
-const messages = ref(null);
+const messages = ref<any>(null);
 onUpdated(() => {
   // console.log(messages.value.scrollTop, messages.value.scrollHeight);
   if (messages.value !== null) {
